@@ -2,7 +2,6 @@ from flask import Flask, request, render_template
 import pandas as pd
 import numpy as np
 from tensorflow.keras.models import load_model
-# import tkinter as tk
 
 def modify_the_label(label):
     if(label==0):
@@ -52,20 +51,6 @@ def upload():
         # modify the label:
         new_predicted_class = modify_the_label(predicted_class)
         
-        # show the results-start:
-        # root = tk.Tk()
-        # window_width = 600
-        # window_height = 200
-        # screen_width = root.winfo_screenwidth()
-        # screen_height = root.winfo_screenheight()
-        # x_pos = int((screen_width - window_width) / 2)
-        # y_pos = int((screen_height - window_height) / 2)
-        # root.geometry(f"{window_width}x{window_height}+{x_pos}+{y_pos}")
-        # result_label = tk.Label(root, font=('Arial', 20), anchor='center')
-        # result_label.configure(text=f'The predicted class is {new_predicted_class}')
-        # result_label.pack(expand=True, fill='both')
-        # root.mainloop()
-        # show the results-end
 
         # Return the result
         return f"The predicted class is {new_predicted_class}"

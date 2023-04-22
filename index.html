@@ -2,27 +2,26 @@
 <html>
 
 <head>
-  <title>Leti6 Classifier</title>
+  <title>Leti7 Classifier</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css">
 
 </head>
 
-<body class="h-screen flex flex-col justify-center items-center  ">
-  <h1 class="text-7xl py-8 tracking-wide font-mono font-semibold"> ECG Signal Classifier</h1>
+<body>
+  <h1> ECG Signal Classifier</h1>
   <!-- two sections -->
-  <div class="text-lg p-5 w-full flex justify-center items-center gap-x-6">
-    <div class="w-1/4 rounded-lg">
-      <img src="./static/leti.png" class="rounded-lg " alt="letiLogo">
+  <div>
+    <div>
+      <img src="./static/leti.png" alt="letiLogo">
     </div>
-    <div class=" w-1/4 h-1/2 flex flex-col justify-center items-start">
-      <h2 class="text-lg font-bold py-4 font-mono">Choose an ECG signal, please</h2>
-      <!-- <form method="POST" action="/letiecgclassifier/upload" enctype="multipart/form-data"> -->
-      <!-- <form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data"> -->
-      <form method="POST" action="upload/" enctype="multipart/form-data">
+    <div>
+      <h2>Choose an ECG signal, please</h2>
+      <form method="POST" action="/letiecgclassifier/upload" enctype="multipart/form-data">
+        <!-- <form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data"> -->
+        <!-- <form method="POST" action="upload/" enctype="multipart/form-data"> -->
 
-        <input type="file" name="file" class="">
-        <input type="submit" value="Upload" name="submit"
-          class=" p-2 hover:text-gray-500 duration-200 ease-in-out rounded-md cursor-pointer">
+        <input type="file" name="file">
+        <input type="submit" value="Upload" name="submit">
       </form>
     </div>
   </div>

@@ -30,42 +30,42 @@ model = load_model('Model8PatchSize')
 @app.route('/')
 def home():
     return render_template('../index.html')
-    return render_template('index.html')
 
 # Define a route for file upload
 @app.route('/upload', methods=['POST'])
 def upload():
     if request.method == 'POST':
-
-        # Get form data
-        name = request.form['name']
-        email = request.form['email']
+        
+        # Get uploaded file
         file = request.files['file']
-
+        
         # Read data from file
         data = pd.read_csv(file, header=None)
         data = data.apply(pd.to_numeric, errors='coerce').values
         data = data.astype(float) # convert data to float
         data = data.reshape(1, -1)  # Reshape to match model input shape
-
+        
         # Predict class of object
         class_probabilities = model.predict(data)
         predicted_class = np.argmax(class_probabilities)
-
+        
         # modify the label:
         new_predicted_class = modify_the_label(predicted_class)
-
-        # Send email with result
-        import requests
-        email_response = requests.post(
-            "https://formspree.io/f/mvondqvy",
-            data={
-                "name": name,
-                "email": email,
-                "predicted_class": new_predicted_class
-            }
-        )
-        print(email_response.content)
+        
+        # show the results-start:
+        root = tk.Tk()
+        window_width = 600
+        window_height = 200
+        screen_width = root.winfo_screenwidth()
+        screen_height = root.winfo_screenheight()
+        x_pos = int((screen_width - window_width) / 2)
+        y_pos = int((screen_height - window_height) / 2)
+        root.geometry(f"{window_width}x{window_height}+{x_pos}+{y_pos}")
+        result_label = tk.Label(root, font=('Arial', 20), anchor='center')
+        result_label.configure(text=f'The predicted class is {new_predicted_class}')
+        result_label.pack(expand=True, fill='both')
+        root.mainloop()
+        # show the results-end
 
         # Return the result
         return f"The predicted class is {new_predicted_class}"

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>ECG Classifier</title>
+  <title>ECG Render Classifier</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css">
 
 </head>
@@ -16,7 +16,8 @@
     </div>
     <div class=" w-1/4 h-1/2 flex flex-col justify-center items-start">
       <h2 class="text-lg font-bold py-4 font-mono">Choose an ECG signal, please</h2>
-      <form method="POST" action="/upload" enctype="multipart/form-data">
+      <!-- <form method="POST" action="/upload" enctype="multipart/form-data"> -->
+      <form action="{{url_for(upload)}}">
         <input type="file" name="file" class="">
         <input type="submit" value="Upload"
           class=" p-2 hover:text-gray-500 duration-200 ease-in-out rounded-md cursor-pointer">

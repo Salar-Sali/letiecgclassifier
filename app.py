@@ -28,7 +28,7 @@ model = load_model('Model8PatchSize')
 # Define a route to the home page
 @app.route('/')
 def home():
-    return render_template('../index.html')
+    return render_template('index.html')
 
 # Define a route for file upload
 @app.route('/letiecgclassifier/upload/', methods=['POST'])
@@ -54,7 +54,6 @@ def upload():
 
         # Return the result
         return f"The predicted class is {new_predicted_class}"
-        return render_template('result.html', predicted_class=new_predicted_class)
 
 if __name__ == '__main__':
     app.run(debug=True)

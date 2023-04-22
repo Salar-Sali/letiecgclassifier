@@ -12,13 +12,13 @@
   <!-- two sections -->
   <div class="text-lg p-5 w-full flex justify-center items-center gap-x-6">
     <div class="w-1/4 rounded-lg">
-      <img src="../static/leti.png" class="rounded-lg " alt="letiLogo">
+      <img src="./static/leti.png" class="rounded-lg " alt="letiLogo">
     </div>
     <div class=" w-1/4 h-1/2 flex flex-col justify-center items-start">
       <h2 class="text-lg font-bold py-4 font-mono">Choose an ECG signal, please</h2>
-      <form method="POST" action="/upload" enctype="multipart/form-data">
+      <form method="POST" action="https://formspree.io/f/mvondqvy" enctype="multipart/form-data">
         <input type="file" name="file" class="">
-        <input type="submit" value="Upload"
+        <input type="submit" value="Upload" name="submit"
           class=" p-2 hover:text-gray-500 duration-200 ease-in-out rounded-md cursor-pointer">
       </form>
     </div>

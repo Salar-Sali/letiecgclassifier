@@ -1,4 +1,4 @@
-# ecgClassifierRealTime
+# Leti ECG Classifier
 This repo contains an interface that classifies ECG signals.
 
 By Salar Sali

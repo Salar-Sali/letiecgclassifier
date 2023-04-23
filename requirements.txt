@@ -45,9 +45,9 @@ Jinja2==3.1.2
 joblib==1.1.0
 jupyter-client
 jupyter-core
-keras==2.12.0
-Keras-Applications==1.0.8
-Keras-Preprocessing==1.1.2
+keras
+Keras-Applications
+Keras-Preprocessing
 libclang==13.0.0
 Markdown==3.3.6
 MarkupSafe==2.1.2

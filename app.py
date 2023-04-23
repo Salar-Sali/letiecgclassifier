@@ -32,7 +32,7 @@ def home():
 
 # Define a route for file upload
 # @app.route('/upload', methods=['POST'])
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         

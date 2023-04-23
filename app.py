@@ -45,17 +45,13 @@ def upload():
         data = data.astype(float) # convert data to float
         data = data.reshape(1, -1)  # Reshape to match model input shape
         
-        # Predict class of object
         class_probabilities = model.predict(data)
         predicted_class = np.argmax(class_probabilities)
         
-        # modify the label:
         new_predicted_class = modify_the_label(predicted_class)
         
-        # Return the result
         return render_template('result.html', predicted_class=new_predicted_class)
     return render_template('index.html')
-        # return f"The predicted class is {new_predicted_class}"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5000)

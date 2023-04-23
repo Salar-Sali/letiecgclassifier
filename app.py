@@ -53,7 +53,7 @@ def upload():
         new_predicted_class = modify_the_label(predicted_class)
         
         # Return the result
-        return render_template('result.html', predicted_class=new_predicted_class.decode())
+        return render_template('result.html', predicted_class=new_predicted_class)
     return render_template('index.html')
         # return f"The predicted class is {new_predicted_class}"
 

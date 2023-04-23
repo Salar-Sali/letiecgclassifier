@@ -31,7 +31,8 @@ def home():
     return render_template('index.html')
 
 # Define a route for file upload
-@app.route('/upload', methods=['POST'])
+# @app.route('/upload', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         
@@ -51,9 +52,10 @@ def upload():
         # modify the label:
         new_predicted_class = modify_the_label(predicted_class)
         
-
         # Return the result
-        return f"The predicted class is {new_predicted_class}"
+        return render_template('result.html', predicted_class=new_predicted_class.decode())
+    return render_template('index.html')
+        # return f"The predicted class is {new_predicted_class}"
 
 if __name__ == '__main__':
     app.run(debug=True)

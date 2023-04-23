@@ -31,7 +31,7 @@ def home():
     return render_template('index.html')
 
 # Define a route for file upload
-@app.route('/letiecgclassifier/upload/', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def upload():
     if request.method == 'POST':
         

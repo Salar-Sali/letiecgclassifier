@@ -8,7 +8,7 @@
 </head>
 
 <body class="h-screen flex flex-col justify-center items-center  ">
-  <h1 class="text-7xl py-8 tracking-wide font-mono font-semibold"> ECG Signal Classifier</h1>
+  <h1 class="text-7xl py-8 tracking-wide font-mono font-semibold"> ECG Signal Classifier 22</h1>
   <!-- two sections -->
   <div class="text-lg p-5 w-full flex justify-center items-center gap-x-6">
     <div class="w-1/4 rounded-lg">
@@ -17,7 +17,7 @@
     <div class=" w-1/4 h-1/2 flex flex-col justify-center items-start">
       <h2 class="text-lg font-bold py-4 font-mono">Choose an ECG signal, please</h2>
       <!-- <form method="POST" action="/upload" enctype="multipart/form-data"> -->
-      <form action="{{url_for(upload)}}">
+      <form method="POST" action="/upload" enctype="multipart/form-data">
         <input type="file" name="file" class="">
         <input type="submit" value="Upload"
           class=" p-2 hover:text-gray-500 duration-200 ease-in-out rounded-md cursor-pointer">

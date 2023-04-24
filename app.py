@@ -34,22 +34,24 @@ def home():
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        
-        # Get uploaded file
-        file = request.files['file']
-        
-        # Read data from file
-        data = pd.read_csv(file, header=None)
-        data = data.apply(pd.to_numeric, errors='coerce').values
-        data = data.astype(float) # convert data to float
-        data = data.reshape(1, -1)  # Reshape to match model input shape
-        
-        class_probabilities = model.predict(data)
-        predicted_class = np.argmax(class_probabilities)
-        
-        new_predicted_class = modify_the_label(predicted_class)
-        
-        return render_template('result.html', predicted_class=new_predicted_class)
+        try:
+            # Get uploaded file
+            file = request.files['file']
+            
+            # Read data from file
+            data = pd.read_csv(file, header=None)
+            data = data.apply(pd.to_numeric, errors='coerce').values
+            data = data.astype(float) # convert data to float
+            data = data.reshape(1, -1)  # Reshape to match model input shape
+            
+            class_probabilities = model.predict(data)
+            predicted_class = np.argmax(class_probabilities)
+            
+            new_predicted_class = modify_the_label(predicted_class)
+            
+            return render_template('result.html', predicted_class=new_predicted_class)
+        except:
+            return render_template('unValidData.html')
     return render_template('index.html')
 
 if __name__ == '__main__':

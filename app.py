@@ -22,8 +22,8 @@ def modify_the_label(label):
 app = Flask(__name__)
 
 # Load saved model
-# model = load_model('patchSize8')
-model = load_model('Model8PatchSize')
+model = load_model('patchSize8')
+# model = load_model('Model8PatchSize')
 
 # Define a route to the home page
 @app.route('/')
@@ -31,7 +31,6 @@ def home():
     return render_template('index.html')
 
 # Define a route for file upload
-# @app.route('/upload', methods=['POST'])
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':

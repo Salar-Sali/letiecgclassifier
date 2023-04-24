@@ -2,24 +2,44 @@
 <html>
 
 <head>
-  <title>ECG Render Classifier</title>
+  <title>ECG Signal Classifier</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css">
 
 </head>
 
-<body class="h-screen flex flex-col justify-center items-center  ">
-  <h1 class="text-7xl py-8 tracking-wide font-mono font-semibold"> ECG Signal Classifier 22</h1>
+<body class="h-screen flex flex-col justify-center gap-y-16 items-center">
+  <!-- header -->
+  <h1 class="text-7xl py-8 tracking-wide font-mono font-semibold"> ECG Signal Classifier</h1>
+  <!-- body -->
   <div class="text-lg p-5 w-full flex justify-center items-center gap-x-6">
     <div class="w-1/4 rounded-lg">
       <img src="../static/leti.png" class="rounded-lg " alt="letiLogo">
     </div>
     <div class=" w-1/4 h-1/2 flex flex-col justify-center items-start">
-      <h2 class="text-lg font-bold py-4 font-mono">Choose an ECG signal, please</h2>
+      <h2 class="text-2xl font-bold py-4 font-mono">Choose an ECG file then click Diagnose</h2>
       <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="file" class="">
-        <input type="submit" value="Upload"
-          class=" p-2 hover:text-gray-500 duration-200 ease-in-out rounded-md cursor-pointer">
+        <input type="file" name="file">
+        <input type="submit" value="Diagnose"
+          class=" p-2 my-2 border border-black hover:text-gray-500 duration-200 ease-in-out rounded-md cursor-pointer">
       </form>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <h2 class="text-3xl my-5">Contact with the researcher</h2>
+    <div class="flex gap-x-4 justify-around">
+      <!-- github -->
+      <a href="https://github.com/Salar-Sali" target="_blank">
+        <img src="../static/gh.png" alt="github" class="w-9 h-9" />
+      </a>
+      <!-- email -->
+      <a href="salar.sali97@gmail.com" target="_blank">
+        <img src="../static/email.png" alt="github" class="w-9 h-9" />
+      </a>
+      <!-- linkedIn -->
+      <a href="https://www.linkedin.com/in/salarsali197/" target="_blank">
+        <img src="../static/linked.svg" alt="linkedIn" class="w-9 h-9" />
+      </a>
     </div>
   </div>
 

@@ -6,16 +6,66 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css">
 </head>
 
-<body class="h-screen flex flex-col justify-center items-center  ">
-  <h1 class="text-5xl py-8 tracking-wide font-mono font-semibold"> ECG Signal Classifier - Result</h1>
-  <div class="text-lg p-5 w-full flex justify-center items-center gap-x-6">
-    <div class="w-1/4 rounded-lg">
-      <img src="./static/leti.png" class="rounded-lg " alt="letiLogo">
+<body class="h-screen  bg-cover bg-center text-white" style="background-image: url(../static/bg1.jpg)">
+
+  <div class="flex justify-around">
+    <!-- body everything-->
+    <div class="w-1/4 hidden lg:block"></div>
+    <div class="w-1/4 hidden lg:block "></div>
+    <div class="flex flex-col justify-center items-center h-screen w-3/4 lg:w-2/4  text-lg  gap-y-6">
+      <!-- leti logo start -->
+      <div class="w-2/4 rounded-lg">
+        <img src="../static/letiSVG2.svg" class="rounded-lg" alt="letiLogo">
+      </div>
+      <!-- leti logo end -->
+      <!-- titles -->
+      <div class="">
+        <h1 class=" inline-block w-full text-5xl py-8 tracking-wide font-mono font-semibold text-center 	">
+          ECG
+          Signal
+          Classifier
+        </h1>
+        <div class="w-full text-center">
+          <span class="inline-block w-1/2 ">
+            The Leti ECG Classifier is an interface designed for classifying ECG signals. It was built
+            using a model
+            trained on six different types of arrhythmias: Bundle Branch Block, Cardiomyopathy, Dysrhythmia, Healthy
+            Controls, Myocardial Infarction, and a category for signals that don't belong to any of the aforementioned
+            types.
+          </span>
+        </div>
+      </div>
+      <!-- Form start -->
+      <div class=" w-full  flex flex-col justify-center items-center">
+        <h2 class="text-2xl font-bold py-4 font-mono text-center ">
+          The predicted class is
+        </h2>
+        <span class="text-green-500 font-bold">{{ predicted_class }}</span>
+      </div>
+      <!-- Form end -->
+
+      <!-- footer -->
+      <div class="footer">
+        <h2 class="text-3xl my-5">Contact us</h2>
+        <div class="flex gap-x-4 justify-around">
+          <!-- github -->
+          <a href="https://github.com/Salar-Sali" target="_blank">
+            <img src="../static/gh.png" alt="github" class="w-9 h-9" />
+          </a>
+          <!-- email -->
+          <a href="salar.sali97@gmail.com" target="_blank">
+            <img src="../static/email.png" alt="github" class="w-9 h-9" />
+          </a>
+          <!-- linkedIn -->
+          <a href="https://www.linkedin.com/in/salarsali197/" target="_blank">
+            <img src="../static/linked.svg" alt="linkedIn" class="w-9 h-9" />
+          </a>
+        </div>
+      </div>
+      <!-- footer end -->
     </div>
-    <div class=" w-1/4 h-1/2 flex flex-col justify-center items-start">
-      <h2 class="text-2xl font-bold py-4 font-mono">The predicted class is:</h2>
-      <h3 class="text-xl font-bold py-4 font-mono">{{ predicted_class }}</h3>
-    </div>
+    <!-- body everything end-->
+
   </div>
 </body>
 

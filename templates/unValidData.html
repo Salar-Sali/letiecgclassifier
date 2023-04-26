@@ -12,21 +12,22 @@
     <!-- body everything-->
     <div class="w-1/4 hidden lg:block"></div>
     <div class="w-1/4 hidden lg:block "></div>
-    <div class="flex flex-col justify-center items-center h-screen w-3/4 lg:w-2/4  text-lg  gap-y-6">
+    <div
+      class="flex flex-col justify-center items-center h-screen w-11/12 md:w-3/4 lg:w-2/4  text-lg gap-y-3 md:gap-y-5">
       <!-- leti logo start -->
       <div class="w-2/4 rounded-lg">
         <img src="../static/letiSVG2.svg" class="rounded-lg" alt="letiLogo">
       </div>
       <!-- leti logo end -->
       <!-- titles -->
-      <div class="">
-        <h1 class=" inline-block w-full text-5xl py-8 tracking-wide font-mono font-semibold text-center 	">
+      <div>
+        <h1 class=" inline-block w-full text-3xl md:text-5xl tracking-wide font-mono font-semibold text-center 	">
           ECG
           Signal
           Classifier
         </h1>
         <div class="w-full text-center">
-          <span class="inline-block w-1/2 ">
+          <span class="hidden md:inline-block w-11/12 lg:w-3/4 ">
             The Leti ECG Classifier is an interface designed for classifying ECG signals. It was built
             using a model
             trained on six different types of arrhythmias: Bundle Branch Block, Cardiomyopathy, Dysrhythmia, Healthy
@@ -37,8 +38,10 @@
       </div>
       <!-- Form start -->
       <div class=" w-full  flex flex-col justify-center items-center">
-        <h1 class="text-5xl py-8 tracking-wide font-mono font-semibold text-red-600"> The input is invalid</h1>
-        <div class="text-lg p-5 w-1/2 flex justify-center items-center gap-x-2 text-center">
+        <h1 class="text-xl md:text-3xl  tracking-wide font-mono font-semibold text-red-600 text-center mb-1"> The input
+          is invalid
+        </h1>
+        <div class="text-lg w-11/12 lg:w-3/4 flex justify-center items-center text-center">
           Dear user, please note that this software is designed to analyze ECG signals based on numerical data.
           Therefore, it
           is required to upload a CSV file containing the ECG signal, which must consist of 2000 points. If you have any

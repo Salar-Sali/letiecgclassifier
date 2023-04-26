@@ -42,6 +42,10 @@ def upload():
             data = pd.read_csv(file, header=None)
             data = data.apply(pd.to_numeric, errors='coerce').values
             data = data.astype(float) # convert data to float
+
+            # handle big signals:
+            data = data[0,0:2000]
+
             data = data.reshape(1, -1)  # Reshape to match model input shape
             
             class_probabilities = model.predict(data)

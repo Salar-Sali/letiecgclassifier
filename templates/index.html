@@ -13,21 +13,22 @@
     <!-- body everything-->
     <div class="w-1/4 hidden lg:block"></div>
     <div class="w-1/4 hidden lg:block "></div>
-    <div class="flex flex-col justify-center items-center h-screen w-3/4 lg:w-2/4  text-lg  gap-y-6">
+    <div
+      class="flex flex-col justify-center items-center h-screen w-11/12 md:w-3/4 lg:w-2/4  text-lg gap-y-3 md:gap-y-5">
       <!-- leti logo start -->
       <div class="w-2/4 rounded-lg">
         <img src="../static/letiSVG2.svg" class="rounded-lg" alt="letiLogo">
       </div>
       <!-- leti logo end -->
       <!-- titles -->
-      <div class="">
-        <h1 class=" inline-block w-full text-5xl py-8 tracking-wide font-mono font-semibold text-center 	">
+      <div>
+        <h1 class=" inline-block w-full text-3xl md:text-5xl  tracking-wide font-mono font-semibold text-center 	">
           ECG
           Signal
           Classifier
         </h1>
         <div class="w-full text-center">
-          <span class="inline-block w-1/2 ">
+          <span class="inline-block w-11/12 lg:w-3/4  ">
             The Leti ECG Classifier is an interface designed for classifying ECG signals. It was built
             using a model
             trained on six different types of arrhythmias: Bundle Branch Block, Cardiomyopathy, Dysrhythmia, Healthy
@@ -37,13 +38,13 @@
         </div>
       </div>
       <!-- Form start -->
-      <div class=" w-full  flex flex-col justify-center items-center">
-        <h2 class="text-2xl font-bold py-4 font-mono text-center ">Choose an ECG file then click Diagnose
+      <div class="w-full  flex flex-col justify-center items-center">
+        <h2 class="text-xl md:text-3xl font-bold  font-mono text-center ">Choose an ECG file then click Diagnose
         </h2>
         <form method="POST" action="/upload" enctype="multipart/form-data">
-          <input type="file" name="file">
+          <input type="file" name="file" class="text-sm md:text-base">
           <input type="submit" value="Diagnose"
-            class=" py-1 px-2 my-2 bg-white text-black border border-black rounded-md cursor-pointer">
+            class=" py-1 px-2 my-2 bg-white text-black border border-black rounded-md cursor-pointer text-sm md:text-base">
         </form>
       </div>
       <!-- Form end -->

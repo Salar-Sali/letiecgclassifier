@@ -3,4 +3,4 @@ This repo contains an interface that classifies ECG signals.
 
 By Salar Sali
 2 April 2023
-+79112166580
+salar.sali97@gmail.com
